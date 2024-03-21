@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmnwmel48vdoq"]
+
+[ext_resource type="Script" path="res://mandelbrot.gd" id="1_vj31k"]
+[ext_resource type="Shader" path="res://mandelbrot.gdshader" id="1_xhbhn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jd5ds"]
+shader = ExtResource("1_xhbhn")
+shader_parameter/zoom = 4.0
+shader_parameter/offset = Vector2(0, 0)
+
+[node name="mandelbrot" type="Node2D"]
+script = ExtResource("1_vj31k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jd5ds")
+offset_right = 1150.0
+offset_bottom = 647.0
